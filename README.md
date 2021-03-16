@@ -27,11 +27,14 @@ Your local blockchain starts with a set of keys or accounts, named `a`, `b`, `c`
 ![](images/secretdev-startup-1.png)
 
 After initializing and validating the genesis file you can see the network starting and blocks getting committed. 
-Included in the startup is an HTTP REST server that can be accessed via `localhost` on port *1337*.
+Included in the startup is an HTTP REST server (also known as the LCD or Light Client Daemon) that can be accessed 
+via `localhost` on port *1337*.
+
+## Query the Latest Block
 
 ![](images/secretdev-startup-2.png)
 
-To check out the LCD (light client daemon) use the `curl` command to view the latest block.
+Use the REST API to view the latest block information.
 
 ```bash
 curl http://localhost:1337/blocks/latest
@@ -39,7 +42,7 @@ curl http://localhost:1337/blocks/latest
 
 ![](images/rest-blocks-latest.png)
 
-## Use the CLI to Interact 
+## Use the CLI to Interact with the Network
 
 In a separate terminal window connect to the container in interactive mode, executing the Bash shell.
 
@@ -57,6 +60,8 @@ secretcli keys list
 testing (e.g. no password required).
 
 ![](images/secretdev-keys.png)
+
+Use `exit` to quit your interactive Docker session.
 
 ## More Cool Stuff
 
