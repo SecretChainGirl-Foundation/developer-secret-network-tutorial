@@ -24,12 +24,12 @@ docker run -it --rm \
 
 Your local blockchain starts with a set of keys or accounts, named `a`, `b`, `c`, and `d`.
 
-!(images/secretdev-startup-1.png)
+![](images/secretdev-startup-1.png)
 
 After initializing and validating the genesis file you can see network starting and committing blocks. Included
 in the startup is an HTTP REST server that can be accessed via `localhost` on port *1337*.
 
-!(images/secretdev-startup-2.png)
+![](images/secretdev-startup-2.png)
 
 To check out the LCD (light client daemon) use the `curl` command to view the latest block.
 
@@ -37,7 +37,7 @@ To check out the LCD (light client daemon) use the `curl` command to view the la
 curl http://localhost:1337/blocks/latest
 ```
 
-!(images/rest-blocks-latest.png)
+![](images/rest-blocks-latest.png)
 
 ## Use the CLI to Interact 
 
@@ -56,7 +56,7 @@ secretcli keys list
 *NOTE*: _secretcli_ is configured to use the test keyring backend which makes it easier for development and
 testing (e.g. no password required).
 
-!(images/secretdev-keys.png)
+![](images/secretdev-keys.png)
 
 ## More Resources
 
