@@ -10,14 +10,24 @@ It's super easy and quick, once you have `docker` installed. Just a few commands
 
 - Install [Docker](https://docs.docker.com/install/) for your environment (Mac, Windows, Linux).
 
+- Install `jq` (command-line JSON processor).
+
+```bash
+sudo apt-get install jq
+```
+
+- Pull the Secret developer testnet image from Docker Hub.
+
+```bash
+docker pull enigmampc/secret-network-sw-dev
+```
+
 ## Launch the Developer Secret Network
 
 In a terminal window start the Secret Network by running the docker container named _secretdev_:
 
 ```bash
-docker run -it --rm \
-  -p 26657:26657 -p 26656:26656 -p 1337:1337 \
-  --name secretdev enigmampc/secret-network-sw-dev
+docker run -it --rm -p 26657:26657 -p 26656:26656 -p 1337:1337 -v $(pwd):/root/code --name secretdev enigmampc/secret-network-sw-dev
 ```
 
 *NOTE*: To stop the _secretdev_ blockchain enter `ctrl + c`.
@@ -37,7 +47,7 @@ via `localhost` on port *1337*.
 Use the REST API to view the latest block information.
 
 ```bash
-curl http://localhost:1337/blocks/latest
+curl http://localhost:1337/blocks/latest | jq
 ```
 
 ![](images/rest-blocks-latest.png)
@@ -50,13 +60,13 @@ In a separate terminal window connect to the container in interactive mode, exec
 docker exec -it secretdev /bin/bash
 ```
 
-Query the list of keys using `secretcli`:
+Query the list of keys using `secretd`:
 
 ```bash
-secretcli keys list
+secretd keys list | jq
 ```
 
-*NOTE*: _secretcli_ is configured to use the test keyring backend which makes it easier for development and
+*NOTE*: _secretd_ is configured to use the test keyring backend which makes it easier for development and
 testing (e.g. no password required).
 
 ![](images/secretdev-keys.png)
@@ -68,5 +78,5 @@ Use `exit` to quit your interactive Docker session.
 - [Secret Network Overview](https://build.scrt.network/overview.html)
 - [Secret Network Architecture](https://build.scrt.network/protocol/architecture.html)
 - [Secret Network Protocol](https://build.scrt.network/protocol/intro.html)
-- [Using the _secretcli_ light client](https://github.com/enigmampc/SecretNetwork/blob/master/docs/validators-and-full-nodes/secretcli.md)
+- [Using the _secretcli_ light client](https://build.scrt.network/validators-and-full-nodes/secretcli.html#secret-cli)
 
