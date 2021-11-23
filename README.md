@@ -8,6 +8,9 @@ It's super easy and quick, once you have `docker` installed. Just a few commands
 
 ## Setup Your Environment
 
+*NOTE*: These instructions were written using Linux as the environment. The JSON processor `jq` may not be available for Windows.
+For Windows omit the `| jq` where it's been used below.
+
 - Install [Docker](https://docs.docker.com/install/) for your environment (Mac, Windows, Linux).
 
 - Install `jq` (command-line JSON processor).
@@ -70,6 +73,14 @@ secretd keys list | jq
 testing (e.g. no password required).
 
 ![](images/secretdev-keys.png)
+
+Query the account balance of one of the keys:
+
+```bash
+secretd q bank balances secret1fz22s7692vnrvftdu9hg2xg0a96rpfqe00vqtc
+```
+
+![](images/query-account-balance.png)
 
 Use `exit` to quit your interactive Docker session.
 
