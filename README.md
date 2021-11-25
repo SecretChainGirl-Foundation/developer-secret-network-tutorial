@@ -13,11 +13,7 @@ For Windows omit the `| jq` where it's been used below.
 
 - Install [Docker](https://docs.docker.com/install/) for your environment (Mac, Windows, Linux).
 
-- Install `jq` (command-line JSON processor).
-
-```bash
-sudo apt-get install jq
-```
+- Install [JQ](https://github.com/stedolan/jq/releases), command-line JSON processor, for your environment (Mac, Windows, Linux).
 
 - Pull the Secret developer testnet image from Docker Hub.
 
