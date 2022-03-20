@@ -80,10 +80,10 @@ secretd q bank balances secret1fz22s7692vnrvftdu9hg2xg0a96rpfqe00vqtc
 
 Use `exit` to quit your interactive Docker session.
 
-## More Cool Stuff
+## Secret Resources for Developers
 
-- [Secret Network Overview](https://build.scrt.network/overview.html)
-- [Secret Network Architecture](https://build.scrt.network/protocol/architecture.html)
-- [Secret Network Protocol](https://build.scrt.network/protocol/intro.html)
-- [Using the _secretcli_ light client](https://build.scrt.network/validators-and-full-nodes/secretcli.html#secret-cli)
+- [Secret Overview](https://docs.scrt.network/overview.html)
+- [Secret Architecture](https://docs.scrt.network/protocol/architecture.html)
+- [Secret Protocol](https://docs.scrt.network/protocol/intro.html)
+- [Secret Light Client](https://docs.scrt.network/cli/secretcli.html)
 
