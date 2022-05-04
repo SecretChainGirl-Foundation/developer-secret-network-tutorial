@@ -15,21 +15,17 @@ For Windows omit the `| jq` where it's been used below.
 
 - Install [JQ](https://github.com/stedolan/jq/releases), command-line JSON processor, for your environment (Mac, Windows, Linux).
 
-- Pull the Secret developer testnet image from Docker Hub.
-
-```bash
-docker pull enigmampc/secret-network-sw-dev
-```
-
-## Launch the Developer Secret Network
+## Launch LocalSecret - An instant local Secret Network blockchain for devs
 
 In a terminal window start the Secret Network by running the docker container named _secretdev_:
 
 ```bash
-docker run -it --rm -p 26657:26657 -p 26656:26656 -p 1337:1337 -v $(pwd):/root/code --name secretdev enigmampc/secret-network-sw-dev
+docker run -it --rm -p 26657:26657 -p 26656:26656 -p 1337:1337 -v $(pwd):/root/code --name secretdev ghcr.io/scrtlabs/localsecret
 ```
 
 *NOTE*: To stop the _secretdev_ blockchain enter `ctrl + c`.
+
+To read the full LocalSecret docs go to: https://docs.scrt.network/dev/LocalSecret.html
 
 Your local blockchain starts with a set of keys or accounts, named `a`, `b`, `c`, and `d`.
 
